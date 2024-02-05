@@ -1,4 +1,5 @@
 import { useState } from "react"
+import LoginPage from "./components/pages/LoginPage"
 
 function App() {
   // state (état, données)
@@ -12,9 +13,7 @@ function App() {
   // affichage (render)
 
   return ( 
-  <div>
-
-  </div>
+  <LoginPage/>
   )
 } 
 export default App
