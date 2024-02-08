@@ -1,8 +1,10 @@
-import { useState } from "react"
+import React, { useState } from 'react'
 
-export default function LoginPage() {
-    // State
-const [inputValue, setInputValue] = useState("")
+export default function LoginForm() {
+
+    const [inputValue, setInputValue] = useState("")
+// on initialise le state avc string vide, quand changement dans input : comportement handlechange appelé : recupere la valeur et change 
+// le state via son setteur en accedant au parametre event de la fct : réactualise le state et rerender
 
     // Comportements
         // raccourci nfn 
@@ -15,17 +17,16 @@ const handleSubmit = (event) => {
     setInputValue(event.target.value)
   }
 
-    // Affichage (render)
-
   return (
-    <div>
-        <h1>Bienvenue chez nous !</h1>
-        <br />
-        <h2>Connectez-vous</h2>
+   
+        
         <form action="submit" onSubmit={handleSubmit}>
+            <h1>Bienvenue chez nous !</h1>
+            <br />
+            <h2>Connectez-vous</h2>           
             <input value={inputValue} onChange={handleChange} type="text" placeholder="Entrez votre prénom ..." required />
             <button>Accédez à votre espace</button>
         </form>
-    </div>
+    
   )
 }
